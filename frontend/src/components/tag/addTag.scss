@@ -1,0 +1,140 @@
+// addTag.scss
+
+.add-tag-component {
+  margin-top: 12px; 
+  width: 100%;
+
+  // Nút kích hoạt mở form (+ New Tag)
+  .add-tag-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #3b82f6;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 0;
+    transition: color 0.2s ease, transform 0.15s ease;
+
+    .icon {
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: #2563eb;
+      transform: translateX(2px);
+    }
+  }
+
+  // Khung form khi mở rộng (isExpanded = true)
+  .add-tag-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+    .input-row {
+      display: flex;
+      gap: 6px;
+
+      input {
+        flex: 1;
+        height: 32px;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        padding: 0 8px;
+        font-size: 12px;
+        outline: none;
+        color: #333;
+        background-color: transparent;
+        box-sizing: border-box;
+        transition: border-color 0.2s ease;
+
+        &:focus {
+          border-color: #3b82f6;
+        }
+
+        &::placeholder {
+          color: #94a3b8;
+          font-size: 12px;
+        }
+      }
+
+      .submit-btn {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3b82f6;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #2563eb;
+        }
+      }
+    }
+
+    // Bảng màu chấm tròn
+    .color-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 0;
+
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+
+        // Trạng thái màu đang được chọn
+        &.selected {
+          border-color: #ffffff;
+          box-shadow: 0 0 0 1.5px #1e293b;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .error-text {
+      color: #ef4444;
+      font-size: 11px;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .close-text {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 11px;
+      cursor: pointer;
+      align-self: flex-end;
+      padding: 0;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0f172a;
+        text-decoration: underline;
+      }
+    }
+  }
+}

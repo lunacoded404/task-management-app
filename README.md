@@ -1,12 +1,12 @@
-# ✅ Task Management App
+# Task Management App
 
-## 📖 Introduce
+## Introduce
 
 Task Management App is a web-based task management system that helps users organize, track, and manage their daily tasks efficiently.
 
 The application supports task management by date, calendar, category, and tags, along with a sticky wall for quick notes. Users can also securely manage their accounts through Firebase Authentication.
 
-## ✨ Features
+## Features
 
 * **Upcoming Tasks:** CRUD tasks for **Today, Tomorrow, and This Week**, with filtering by **All, Active, and Done** status and customizable background colors.
 * **Calendar:** CRUD tasks directly through the calendar.
@@ -15,7 +15,7 @@ The application supports task management by date, calendar, category, and tags, 
 * **Tags:** CRUD task tags and organize tasks using tags.
 * **Authentication:** Sign up, login, and logout using Firebase Authentication.
 
-## 🛠️ Technologies
+## Technologies
 
 ### Frontend
 
@@ -37,7 +37,7 @@ The application supports task management by date, calendar, category, and tags, 
 
 * Firebase Authentication
 
-## 🚀 Setup
+## Setup
 
 ### Frontend
 

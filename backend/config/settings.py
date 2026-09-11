@@ -28,7 +28,6 @@ SECRET_KEY = 'django-insecure-9pa2@=!=tv-(i$ga)+!e+*aj0(vbp_obpi(kd=#dmnmh9*$)ov
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -155,5 +154,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "users.User"
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+ALLOWED_HOSTS = [
+    "backend-task-management-app-ztqo.onrender.com",
+]
 
 import config.firebase 

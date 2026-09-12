@@ -62,27 +62,21 @@
     }
 }
 
-
-@media (max-width: 992px) {
-    .home, .calendar, .day, .category-page, .sticky {
+@media (max-width: 600px) {
+    .sticky {
         flex-direction: column !important;
         height: auto !important;
         overflow: visible !important;
 
-        .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
+        .stickyContainer {
             width: 100% !important;
             flex: unset !important;
-            padding-top: 65px !important; 
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            padding-top: 55px !important; 
             height: auto !important;
             overflow: visible !important;
-        }
-    }
-}
-
-@media (max-width: 576px) {
-    .sticky {
-        .stickyContainer {
-            padding: 8px;
+            box-sizing: border-box !important;
 
             .title {
                 font-size: 24px;
@@ -90,6 +84,7 @@
 
             .row {
                 gap: 12px;
+                justify-content: center;
 
                 .stickyNote, .addNote {
                     width: 100%;

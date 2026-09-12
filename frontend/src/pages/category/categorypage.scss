@@ -49,26 +49,21 @@
     }
 }
 
-@media (max-width: 992px) {
-    .home, .calendar, .day, .category-page, .sticky {
+@media (max-width: 600px) {
+    .category-page {
         flex-direction: column !important;
         height: auto !important;
         overflow: visible !important;
 
-        .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
+        .categoryContainer {
             width: 100% !important;
             flex: unset !important;
-            padding-top: 65px !important; 
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            padding-top: 55px !important; 
             height: auto !important;
             overflow: visible !important;
-        }
-    }
-}
-
-@media (max-width: 576px) {
-    .category-page {
-        .categoryContainer {
-            padding: 8px;
+            box-sizing: border-box !important;
 
             .category-title {
                 p {

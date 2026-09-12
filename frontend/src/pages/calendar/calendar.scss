@@ -52,7 +52,7 @@
         justify-content: center;
         background: rgba(0, 0, 0, 0.45);
         backdrop-filter: blur(4px);
-        padding: 16px; // Tạo khoảng cách an toàn trên mobile
+        padding: 16px;
     }
 
     .calendar-modal {
@@ -263,25 +263,28 @@
     }
 }
 
-@media (max-width: 992px) {
-    .home, .calendar, .day, .category-page, .sticky {
+@media (max-width: 600px) {
+    .calendar {
         flex-direction: column !important;
         height: auto !important;
         overflow: visible !important;
+        padding: 8px !important;
 
-        .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
+        .mycalendar {
             width: 100% !important;
             flex: unset !important;
-            padding-top: 65px !important; 
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            padding-top: 55px !important; 
             height: auto !important;
             overflow: visible !important;
-        }
-    }
-}
+            box-sizing: border-box !important;
 
-@media (max-width: 576px) {
-    .calendar {
-        padding: 8px !important;
+            h1 {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+        }
 
         .calendar-modal {
             padding: 16px;

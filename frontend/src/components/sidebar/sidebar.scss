@@ -1,3 +1,4 @@
+// ===== MẶC ĐỊNH CHO DESKTOP & TABLET LỚN (> 600px) =====
 .mobile-menu-toggle {
     display: none;
 }
@@ -147,25 +148,25 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .mobile-menu-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
         position: fixed;
-        top: 10px;
-        left: 0; 
+        top: 12px;
+        left: 0;
         z-index: 1002;
         background: #ffffff;
         border: 1px solid #d4d4d8;
-        border-left: none; 
+        border-left: none;
         border-radius: 0 8px 8px 0;
-        padding: 8px 10px 8px 6px;
+        padding: 6px 8px 6px 4px;
         cursor: pointer;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
 
         svg {
-            font-size: 24px;
+            font-size: 22px;
             color: #333;
         }
     }
@@ -185,7 +186,7 @@
         left: -280px; 
         width: 280px;
         height: 100vh;
-        z-index: 1001; 
+        z-index: 1001;
         transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
         overflow-y: auto;
@@ -211,9 +212,9 @@
         .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
             width: 100% !important;
             flex: unset !important;
-            padding-left: 15px !important;
-            padding-right: 15px !important;
-            padding-top: 60px !important; 
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            padding-top: 55px !important; 
             height: auto !important;
             overflow: visible !important;
             box-sizing: border-box !important;

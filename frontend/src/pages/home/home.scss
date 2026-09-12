@@ -79,6 +79,20 @@
         height: auto !important;
         overflow: visible !important;
 
+        .sidebar {
+            position: fixed !important;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100vh;
+            z-index: 1001;
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &.open {
+                left: 0 !important;
+            }
+        }
+
         .homeContainer {
             width: 100% !important;
             flex: unset !important;

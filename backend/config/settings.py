@@ -160,6 +160,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://frontend-task-management-app.onrender.com",
 ]
 
 ALLOWED_HOSTS = [
@@ -171,5 +172,5 @@ if os.getenv("RENDER_EXTERNAL_HOSTNAME"):
     ALLOWED_HOSTS.append(
         os.getenv("RENDER_EXTERNAL_HOSTNAME")
     )
-
+    
 import config.firebase 

@@ -1,4 +1,3 @@
-// ===== MẶC ĐỊNH CHO DESKTOP & TABLET LỚN (> 600px) =====
 .mobile-menu-toggle {
     display: none;
 }
@@ -39,6 +38,12 @@
                 cursor: pointer;
                 font-size: 20px;
                 color: #555;
+                padding: 4px;
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
             }
         }
     }
@@ -198,7 +203,9 @@
         .top {
             .menu {
                 .mobile-close-btn {
-                    display: block; 
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
         }

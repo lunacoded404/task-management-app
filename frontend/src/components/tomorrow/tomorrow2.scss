@@ -338,3 +338,22 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .tomorrow {
+    flex: unset !important;
+    width: 100% !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+
+    .today-header {
+      .title-group .title {
+        font-size: 22px;
+      }
+    }
+
+    .task-scroll-container {
+      max-height: none !important;
+    }
+  }
+}

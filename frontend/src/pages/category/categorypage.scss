@@ -49,30 +49,18 @@
     }
 }
 
-// ===== MEDIA QUERIES CHO RESPONSIVE =====
 @media (max-width: 992px) {
-    .category-page {
-        flex-direction: column;
+    .home, .calendar, .day, .category-page, .sticky {
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
 
-        .sidebar {
-            width: 100%;
-            max-width: 100%;
-            min-width: 0;
-            border-right: none;
-            border-bottom: 1px solid #e4e4e7;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-        }
-
-        .categoryContainer {
-            width: 100%;
-            padding: 10px;
-
-            .category-title {
-                p {
-                    font-size: 28px;
-                }
-            }
+        .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
+            width: 100% !important;
+            flex: unset !important;
+            padding-top: 65px !important; 
+            height: auto !important;
+            overflow: visible !important;
         }
     }
 }

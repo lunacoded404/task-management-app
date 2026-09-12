@@ -62,25 +62,19 @@
     }
 }
 
-// ===== MEDIA QUERIES CHO RESPONSIVE =====
 
 @media (max-width: 992px) {
-    .sticky {
-        flex-direction: column;
+    .home, .calendar, .day, .category-page, .sticky {
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
 
-        .stickyContainer {
-            width: 100%;
-            padding: 50px 10px 10px 10px; // Chừa chỗ cho nút toggle
-            margin: 0;
-
-            .title {
-                font-size: 28px;
-            }
-
-            .row {
-                justify-content: center;
-                gap: 16px;
-            }
+        .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
+            width: 100% !important;
+            flex: unset !important;
+            padding-top: 65px !important; 
+            height: auto !important;
+            overflow: visible !important;
         }
     }
 }

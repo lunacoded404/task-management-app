@@ -1,9 +1,10 @@
+// Nút mở menu trên mobile
 .mobile-menu-toggle {
     display: none;
     position: fixed;
     top: 15px;
     left: 15px;
-    z-index: 100;
+    z-index: 1000;
     background: #fff;
     border: 1px solid #d4d4d8;
     border-radius: 8px;
@@ -17,7 +18,7 @@
     }
 }
 
-// Overlay làm tối nền khi mở menu trên mobile
+// Overlay làm tối nền
 .sidebar-overlay {
     display: none;
     position: fixed;
@@ -52,7 +53,7 @@
             }
 
             .mobile-close-btn {
-                display: none; // Ẩn trên laptop
+                display: none;
                 background: none;
                 border: none;
                 cursor: pointer;
@@ -126,14 +127,6 @@
             }
         }
 
-        .title {
-            font-size: 12px;
-            font-weight: bold;
-            color: #666; 
-            margin-top: 15px; 
-            margin-bottom: 5px; 
-        }
-
         .tags-wrapper {
             display: flex; 
             flex-direction: column;
@@ -176,21 +169,22 @@
     }
 }
 
+// ===== RESPONSIVE CHO TABLET & MOBILE (Dưới 992px) =====
 @media (max-width: 992px) {
     .mobile-menu-toggle {
-        display: flex; 
+        display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .sidebar-overlay {
-        display: block; 
+        display: block;
     }
 
     .sidebar {
         position: fixed;
         top: 0;
-        left: -280px; 
+        left: -280px; // Ẩn hoàn toàn sang bên trái màn hình
         width: 280px;
         height: 100vh;
         z-index: 999;
@@ -199,13 +193,13 @@
         overflow-y: auto;
 
         &.open {
-            left: 0;
+            left: 0; // Trượt ra khi được kích hoạt
         }
 
         .top {
             .menu {
                 .mobile-close-btn {
-                    display: block; 
+                    display: block;
                 }
             }
         }

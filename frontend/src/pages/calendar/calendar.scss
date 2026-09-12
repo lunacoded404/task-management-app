@@ -530,33 +530,18 @@
 
 // Tablet và Điện thoại (Dưới 992px)
 @media (max-width: 992px) {
-    .calendar {
+    .category-page {
         flex-direction: column;
-        padding: 10px !important;
 
-        .sidebar {
+        .categoryContainer {
             width: 100%;
-            max-width: 100%;
-            min-width: 0;
-            border-right: none;
-            border-bottom: 1px solid #e4e4e7;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-        }
+            padding: 50px 10px 10px 10px; // Chừa chỗ cho nút toggle
 
-        .mycalendar {
-            width: 100%;
-            padding: 0;
-
-            h1 {
-                font-size: 22px;
-                margin-bottom: 12px;
+            .category-title {
+                p {
+                    font-size: 28px;
+                }
             }
-        }
-
-        // Tùy chỉnh chiều cao lịch trên màn hình nhỏ cho vừa tầm nhìn
-        .rbc-calendar {
-            height: 500px !important;
         }
     }
 }

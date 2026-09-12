@@ -54,19 +54,9 @@
     .day {
         flex-direction: column;
 
-        .sidebar {
-            width: 100%;
-            max-width: 100%;
-            min-width: 0;
-            border-right: none;
-            border-bottom: 1px solid #e4e4e7;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-        }
-
         .dayContainer {
             width: 100%;
-            padding: 10px;
+            padding: 50px 10px 10px 10px; // Chừa chỗ cho nút toggle
 
             .today-title {
                 p {

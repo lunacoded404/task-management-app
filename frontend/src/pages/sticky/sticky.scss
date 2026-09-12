@@ -1,32 +1,116 @@
 .sticky {
     display: flex;
+    flex-direction: row; 
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    .sidebar {
+        flex: 1;
+        min-width: 260px;
+        max-width: 320px;
+        border-right: 1px solid #e4e4e7;
+    }
 
     .stickyContainer {
         flex: 6; 
-        padding: 10px; 
-        margin: 20px; 
+        min-width: 0; 
+        padding: 20px; 
+        box-sizing: border-box;
+        background-color: #f8f9fa;
 
         .title {
-            font-size: 30px;
+            font-size: 36px;
             font-weight: bold;
+            color: #2c2c2c;
+            margin: 0 0 10px 0;
+            padding: 10px 0;
         }
 
         .row {
             display: flex; 
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
             gap: 20px; 
-            padding-top: 20px;
+            padding-top: 10px;
+
+            .stickyNote {
+                width: 280px;
+                height: 280px;
+            }
 
             .addNote {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 color: #333; 
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+                &:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+                }
 
                 .icon {
                     cursor: pointer; 
                     font-size: 50px;
+                    color: #52525b;
+                }
+            }
+        }
+    }
+}
+
+// ===== MEDIA QUERIES CHO RESPONSIVE =====
+
+@media (max-width: 992px) {
+    .sticky {
+        flex-direction: column;
+
+        .sidebar {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            border-right: none;
+            border-bottom: 1px solid #e4e4e7;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+        }
+
+        .stickyContainer {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+
+            .title {
+                font-size: 28px;
+            }
+
+            .row {
+                justify-content: center; 
+                gap: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .sticky {
+        .stickyContainer {
+            padding: 8px;
+
+            .title {
+                font-size: 24px;
+            }
+
+            .row {
+                gap: 12px;
+
+                .stickyNote, .addNote {
+                    width: 100%;
+                    max-width: 100%; 
+                    height: 240px;
                 }
             }
         }

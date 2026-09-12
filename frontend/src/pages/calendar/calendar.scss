@@ -1,15 +1,300 @@
+// .calendar {
+//     display: flex;
+
+//     .mycalendar {
+//         position: relative;
+//         flex: 6; 
+//     }
+
+//     .rbc-event {
+//         transition:
+//             transform 0.15s ease,
+//             box-shadow 0.15s ease;
+
+//         &:hover {
+//             transform: translateY(-1px);
+//             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+//         }
+//     }
+
+//     .rbc-event-content {
+//         font-weight: 600;
+//     }
+
+//     .calendar-modal-overlay {
+//         position: fixed;
+//         inset: 0;
+//         z-index: 9999;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         background: rgba(0, 0, 0, 0.45);
+//         backdrop-filter: blur(4px);
+//     }
+
+//     .calendar-modal {
+//         width: 480px;
+//         max-width: calc(100vw - 32px);
+//         max-height: calc(100vh - 40px);
+//         overflow-y: auto;
+//         background: #fff;
+//         border-radius: 18px;
+//         padding: 24px;
+//         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+//         animation: modalAppear 0.2s ease;
+//     }
+
+//     .modal-header {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         margin-bottom: 24px;
+
+//         h2 {
+//             margin: 0;
+//             font-size: 22px;
+//             font-weight: 700;
+//             color: #18181b;
+//         }
+
+//         button {
+//             width: 34px;
+//             height: 34px;
+//             border: none;
+//             border-radius: 50%;
+//             background: #f4f4f5;
+//             color: #52525b;
+//             font-size: 24px;
+//             line-height: 1;
+//             cursor: pointer;
+//             transition: background 0.15s ease;
+
+//             &:hover {
+//                 background: #e4e4e7;
+//             }
+//         }
+//     }
+
+//     .form-group {
+//         margin-bottom: 18px;
+
+//         label {
+//             display: block;
+//             margin-bottom: 7px;
+//             font-size: 13px;
+//             font-weight: 600;
+//             color: #3f3f46;
+//         }
+
+//         input, textarea {
+//             width: 100%;
+//             box-sizing: border-box;
+//             border: 1px solid #d4d4d8;
+//             border-radius: 10px;
+//             padding: 11px 12px;
+//             font-family: inherit;
+//             font-size: 14px;
+//             outline: none;
+//             transition:
+//                 border-color 0.15s ease,
+//                 box-shadow 0.15s ease;
+
+//             &:focus {
+//                 border-color: #7c3aed;
+//                 box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+//             }
+//         }
+
+//         textarea {
+//             resize: vertical;
+//         }
+//     }
+
+//     .time-row {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         gap: 14px;
+//     }
+
+//     .color-picker {
+//         display: flex;
+//         align-items: center;
+//         gap: 12px;
+//         input[type="color"] {
+//             width: 44px;
+//             height: 36px;
+//             padding: 2px;
+//             border: 1px solid #d4d4d8;
+//             border-radius: 8px;
+//             cursor: pointer;
+//         }
+
+//         span {
+//             font-size: 14px;
+//             font-weight: 600;
+//             color: #52525b;
+//         }
+//     }
+
+//     .modal-actions {
+//         display: flex;
+//         justify-content: flex-end;
+//         gap: 10px;
+//         margin-top: 24px;
+//     }
+
+//     .cancel-btn, .save-btn {
+//         border: none;
+//         border-radius: 10px;
+//         padding: 10px 18px;
+//         font-size: 14px;
+//         font-weight: 600;
+//         cursor: pointer;
+//         transition:
+//             transform 0.15s ease,
+//             opacity 0.15s ease;
+//     }
+
+//     .cancel-btn {
+//         background: #f4f4f5;
+//         color: #3f3f46;
+        
+//         &:hover {
+//             background: #e4e4e7;
+//         }
+//     }
+
+//     .save-btn {
+//         background: #7c3aed;
+//         color: #fff;
+
+//         &:hover {
+//             opacity: 0.9;
+//             transform: translateY(-1px);
+//         }
+//     }
+
+//     .task-detail {
+
+//         .task-title {
+//             display: flex;
+//             align-items: center;
+//             gap: 12px;
+//             margin-bottom: 24px;
+
+//             h3 {
+//                 margin: 0;
+//                 font-size: 20px;
+//                 color: #18181b;
+//             }
+//         }
+
+//         .task-color {
+//             width: 12px;
+//             height: 12px;
+//             border-radius: 50%;
+//             flex-shrink: 0;
+//         }
+
+//         .detail-item {
+//             margin-bottom: 18px;
+
+//             .detail-label {
+//                 display: block;
+//                 margin-bottom: 5px;
+//                 font-size: 12px;
+//                 font-weight: 700;
+//                 text-transform: uppercase;
+//                 letter-spacing: 0.04em;
+//                 color: #71717a;
+//             }
+
+//             p {
+//                 margin: 0;
+//                 font-size: 15px;
+//                 line-height: 1.5;
+//                 color: #27272a;
+//             }
+//         }
+//     }
+
+//     .detail-time-row {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         gap: 20px;
+//     }
+
+//     .status {
+//         display: inline-flex;
+//         padding: 5px 10px;
+//         border-radius: 999px;
+//         font-size: 12px;
+//         font-weight: 700;
+//     }
+
+//     .status.completed {
+//         background: #dcfce7;
+//         color: #166534;
+//     }
+
+//     .status.pending {
+//         background: #fef3c7;
+//         color: #92400e;
+//     }
+// }
+
+// @keyframes modalAppear {
+
+//     from {
+//         opacity: 0;
+//         transform:
+//             translateY(10px)
+//             scale(0.98);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform:
+//             translateY(0)
+//             scale(1);
+//     }
+// }
+
 .calendar {
     display: flex;
+    flex-direction: row; // Mặc định cho laptop/màn hình lớn
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    // Sidebar chiếm không gian vừa phải trên desktop
+    .sidebar {
+        flex: 1;
+        min-width: 260px;
+        max-width: 320px;
+        border-right: 1px solid #e4e4e7;
+    }
 
     .mycalendar {
         position: relative;
         flex: 6; 
+        min-width: 0; // Tránh lỗi vỡ layout flex item khi bảng lịch quá rộng
+        padding: 0 10px;
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #18181b;
+            margin-bottom: 20px;
+        }
+    }
+
+    .rbc-calendar {
+        background-color: #fff;
+        border-radius: 12px;
     }
 
     .rbc-event {
-        transition:
-            transform 0.15s ease,
-            box-shadow 0.15s ease;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
 
         &:hover {
             transform: translateY(-1px);
@@ -30,29 +315,31 @@
         justify-content: center;
         background: rgba(0, 0, 0, 0.45);
         backdrop-filter: blur(4px);
+        padding: 16px; // Tạo khoảng cách an toàn trên mobile
     }
 
     .calendar-modal {
-        width: 480px;
-        max-width: calc(100vw - 32px);
-        max-height: calc(100vh - 40px);
+        width: 100%;
+        max-width: 480px;
+        max-height: 90vh;
         overflow-y: auto;
         background: #fff;
         border-radius: 18px;
         padding: 24px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         animation: modalAppear 0.2s ease;
+        box-sizing: border-box;
     }
 
     .modal-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
 
         h2 {
             margin: 0;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #18181b;
         }
@@ -64,7 +351,7 @@
             border-radius: 50%;
             background: #f4f4f5;
             color: #52525b;
-            font-size: 24px;
+            font-size: 22px;
             line-height: 1;
             cursor: pointer;
             transition: background 0.15s ease;
@@ -76,11 +363,11 @@
     }
 
     .form-group {
-        margin-bottom: 18px;
+        margin-bottom: 16px;
 
         label {
             display: block;
-            margin-bottom: 7px;
+            margin-bottom: 6px;
             font-size: 13px;
             font-weight: 600;
             color: #3f3f46;
@@ -91,13 +378,11 @@
             box-sizing: border-box;
             border: 1px solid #d4d4d8;
             border-radius: 10px;
-            padding: 11px 12px;
+            padding: 10px 12px;
             font-family: inherit;
             font-size: 14px;
             outline: none;
-            transition:
-                border-color 0.15s ease,
-                box-shadow 0.15s ease;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
             &:focus {
                 border-color: #7c3aed;
@@ -113,13 +398,14 @@
     .time-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 14px;
+        gap: 12px;
     }
 
     .color-picker {
         display: flex;
         align-items: center;
         gap: 12px;
+
         input[type="color"] {
             width: 44px;
             height: 36px;
@@ -140,7 +426,7 @@
         display: flex;
         justify-content: flex-end;
         gap: 10px;
-        margin-top: 24px;
+        margin-top: 20px;
     }
 
     .cancel-btn, .save-btn {
@@ -150,9 +436,7 @@
         font-size: 14px;
         font-weight: 600;
         cursor: pointer;
-        transition:
-            transform 0.15s ease,
-            opacity 0.15s ease;
+        transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
     .cancel-btn {
@@ -175,16 +459,15 @@
     }
 
     .task-detail {
-
         .task-title {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
 
             h3 {
                 margin: 0;
-                font-size: 20px;
+                font-size: 18px;
                 color: #18181b;
             }
         }
@@ -197,12 +480,12 @@
         }
 
         .detail-item {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
 
             .detail-label {
                 display: block;
-                margin-bottom: 5px;
-                font-size: 12px;
+                margin-bottom: 4px;
+                font-size: 11px;
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 0.04em;
@@ -211,8 +494,8 @@
 
             p {
                 margin: 0;
-                font-size: 15px;
-                line-height: 1.5;
+                font-size: 14px;
+                line-height: 1.4;
                 color: #27272a;
             }
         }
@@ -221,12 +504,12 @@
     .detail-time-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 16px;
     }
 
     .status {
         display: inline-flex;
-        padding: 5px 10px;
+        padding: 4px 10px;
         border-radius: 999px;
         font-size: 12px;
         font-weight: 700;
@@ -243,19 +526,80 @@
     }
 }
 
-@keyframes modalAppear {
+// ===== MEDIA QUERIES CHO RESPONSIVE =====
 
+// Tablet và Điện thoại (Dưới 992px)
+@media (max-width: 992px) {
+    .calendar {
+        flex-direction: column;
+        padding: 10px !important;
+
+        .sidebar {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            border-right: none;
+            border-bottom: 1px solid #e4e4e7;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+        }
+
+        .mycalendar {
+            width: 100%;
+            padding: 0;
+
+            h1 {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+        }
+
+        // Tùy chỉnh chiều cao lịch trên màn hình nhỏ cho vừa tầm nhìn
+        .rbc-calendar {
+            height: 500px !important;
+        }
+    }
+}
+
+// Điện thoại nhỏ (Dưới 576px)
+@media (max-width: 576px) {
+    .calendar {
+        padding: 8px !important;
+
+        .calendar-modal {
+            padding: 16px;
+            border-radius: 14px;
+            max-height: 85vh;
+        }
+
+        .time-row, .detail-time-row {
+            grid-template-columns: 1fr; // Chuyển thành xếp dọc trên màn hình quá nhỏ
+            gap: 12px;
+        }
+
+        .rbc-calendar {
+            height: 420px !important; // Thu gọn chiều cao lịch để không bị tràn màn hình điện thoại
+        }
+
+        // Thu nhỏ font chữ toolbar của react-big-calendar nếu cần
+        .rbc-toolbar {
+            flex-direction: column;
+            gap: 8px;
+            
+            .rbc-btn-group {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@keyframes modalAppear {
     from {
         opacity: 0;
-        transform:
-            translateY(10px)
-            scale(0.98);
+        transform: translateY(10px) scale(0.98);
     }
-
     to {
         opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
+        transform: translateY(0) scale(1);
     }
 }

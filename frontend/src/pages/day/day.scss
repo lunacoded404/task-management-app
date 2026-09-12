@@ -1,34 +1,98 @@
 .day {
-    display: flex; 
+    display: flex;
+    flex-direction: row; 
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    .sidebar {
+        flex: 1;
+        min-width: 260px;
+        max-width: 320px;
+        border-right: 1px solid #e4e4e7;
+    }
 
     .dayContainer {
-        flex: 6; 
+        flex: 6;
+        min-width: 0; 
         background-color: #f8f9fa;
-        padding: 10px 20px; 
+        padding: 20px;
+        box-sizing: border-box;
 
         .today-title {
             display: flex;
             align-items: center;
-            padding: 10px; 
+            padding: 10px 0;
+            margin-bottom: 10px;
 
             p {
-                font-size: 40px;
+                font-size: 36px;
                 font-weight: bold;
-                color: #2c2c2c; 
+                color: #2c2c2c;
+                margin: 0;
             }
+
             span {
-                height: 35px;
-                width: 55px;
+                height: 32px;
+                width: 50px;
                 background-color: #f0f0f0;
                 border: 1px solid #e6e6e6;
                 border-radius: 5px;
                 display: flex; 
                 align-items: center;
                 justify-content: center;
-                margin-left: 20px;
+                margin-left: 16px;
                 font-weight: normal;
-                font-size: 30px;
+                font-size: 24px;
                 color: #333; 
+            }
+        }
+    }
+}
+
+// ===== MEDIA QUERIES CHO RESPONSIVE =====
+@media (max-width: 992px) {
+    .day {
+        flex-direction: column;
+
+        .sidebar {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            border-right: none;
+            border-bottom: 1px solid #e4e4e7;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+        }
+
+        .dayContainer {
+            width: 100%;
+            padding: 10px;
+
+            .today-title {
+                p {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .day {
+        .dayContainer {
+            padding: 8px;
+
+            .today-title {
+                p {
+                    font-size: 24px;
+                }
+
+                span {
+                    height: 28px;
+                    width: 42px;
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
             }
         }
     }

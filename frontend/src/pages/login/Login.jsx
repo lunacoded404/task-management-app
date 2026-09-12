@@ -131,7 +131,7 @@ const Login = () => {
                     >
                         {loading
                             ? "Logging in..."
-                            : "Login"}
+                            : "Log In"}
                     </button>
 
                     {error && (

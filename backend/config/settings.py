@@ -160,7 +160,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://frontend-task-management-app.onrender.com",
+    "https://task-management-app-2c66.onrender.com",
 ]
 
 ALLOWED_HOSTS = [

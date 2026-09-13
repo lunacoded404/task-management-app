@@ -28,8 +28,21 @@ const Sidebar = () => {
     const { logout } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
 
-    const { tags, loading, error, handleAddTag, handleUpdateTag, handleDeleteTag } = useTags();
-    const { categories, loading: categoriesLoading, error: categoriesError } = useCategories();
+    const {
+        tags,
+        loading,
+        error,
+        handleAddTag,
+        handleUpdateTag,
+        handleDeleteTag
+    } = useTags();
+
+    const {
+        categories,
+        loading: categoriesLoading,
+        error: categoriesError
+    } = useCategories();
+
     const { taskList: todayTasks = [] } = useTasks("today");
     const { taskList: upcomingTasks = [] } = useTasks("upcoming");
 
@@ -41,23 +54,44 @@ const Sidebar = () => {
         }
     };
 
-    const getCategoryLabel = (name) => name.charAt(0).toUpperCase() + name.slice(1);
+    const getCategoryLabel = (name) =>
+        name.charAt(0).toUpperCase() + name.slice(1);
+
     const toggleSidebar = () => setIsOpen(!isOpen);
     const closeSidebar = () => setIsOpen(false);
 
     return (
         <>
-            <button className="mobile-menu-toggle" onClick={toggleSidebar} aria-label="Toggle Menu">
-                <MenuIcon />
-            </button>
+            {/* Menu button - chỉ xuất hiện khi Sidebar đóng */}
+            {!isOpen && (
+                <button
+                    className="mobile-menu-toggle"
+                    onClick={toggleSidebar}
+                    aria-label="Open Menu"
+                >
+                    <MenuIcon />
+                </button>
+            )}
 
-            {isOpen && <div className="sidebar-overlay" onClick={closeSidebar}></div>}
+            {/* Overlay */}
+            {isOpen && (
+                <div
+                    className="sidebar-overlay"
+                    onClick={closeSidebar}
+                ></div>
+            )}
 
             <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="top">
                     <div className="menu">
                         <span className="menu-title">Menu</span>
-                        <button className="mobile-close-btn" onClick={closeSidebar}>
+
+                        {/* Close button - chỉ xuất hiện khi Sidebar mở */}
+                        <button
+                            className="mobile-close-btn"
+                            onClick={closeSidebar}
+                            aria-label="Close Menu"
+                        >
                             <CloseIcon />
                         </button>
                     </div>
@@ -66,29 +100,53 @@ const Sidebar = () => {
                 <div className="center">
                     <ul>
                         <p className="title">TASKS</p>
-                        <Link to="/home" style={{ textDecoration: "none" }} onClick={closeSidebar}>
+
+                        <Link
+                            to="/home"
+                            style={{ textDecoration: "none" }}
+                            onClick={closeSidebar}
+                        >
                             <li>
-                                <NavigateNextIcon className='icon' />
+                                <NavigateNextIcon className="icon" />
                                 <span>Upcoming</span>
-                                <div className="counter">{upcomingTasks.length}</div>
+                                <div className="counter">
+                                    {upcomingTasks.length}
+                                </div>
                             </li>
                         </Link>
-                        <Link to="/day" style={{ textDecoration: "none" }} onClick={closeSidebar}>
+
+                        <Link
+                            to="/day"
+                            style={{ textDecoration: "none" }}
+                            onClick={closeSidebar}
+                        >
                             <li>
-                                <ChecklistIcon className='icon' />
+                                <ChecklistIcon className="icon" />
                                 <span>Today</span>
-                                <div className="counter">{todayTasks.length}</div>
+                                <div className="counter">
+                                    {todayTasks.length}
+                                </div>
                             </li>
                         </Link>
-                        <Link to="/calendar" style={{ textDecoration: "none" }} onClick={closeSidebar}>
+
+                        <Link
+                            to="/calendar"
+                            style={{ textDecoration: "none" }}
+                            onClick={closeSidebar}
+                        >
                             <li>
-                                <CalendarMonthIcon className='icon' />
+                                <CalendarMonthIcon className="icon" />
                                 <span>Calendar</span>
                             </li>
                         </Link>
-                        <Link to="/sticky" style={{ textDecoration: "none" }} onClick={closeSidebar}>
+
+                        <Link
+                            to="/sticky"
+                            style={{ textDecoration: "none" }}
+                            onClick={closeSidebar}
+                        >
                             <li>
-                                <StickyNote2Icon className='icon' />
+                                <StickyNote2Icon className="icon" />
                                 <span>Sticky Wall</span>
                             </li>
                         </Link>
@@ -96,30 +154,81 @@ const Sidebar = () => {
 
                     <ul>
                         <p className="title">CATEGORY</p>
-                        {!categoriesLoading && !categoriesError && categories.map((category) => (
-                            <li key={category.id} onClick={() => { navigate(`/category/${category.name}`); closeSidebar(); }}>
-                                <div className="color" style={{ backgroundColor: CATEGORY_COLORS[category.name] }} />
-                                <span>{getCategoryLabel(category.name)}</span>
-                                <div className="counter">{category.task_count}</div>
-                            </li>
-                        ))}
+
+                        {!categoriesLoading &&
+                            !categoriesError &&
+                            categories.map((category) => (
+                                <li
+                                    key={category.id}
+                                    onClick={() => {
+                                        navigate(`/category/${category.name}`);
+                                        closeSidebar();
+                                    }}
+                                >
+                                    <div
+                                        className="color"
+                                        style={{
+                                            backgroundColor:
+                                                CATEGORY_COLORS[category.name]
+                                        }}
+                                    />
+
+                                    <span>
+                                        {getCategoryLabel(category.name)}
+                                    </span>
+
+                                    <div className="counter">
+                                        {category.task_count}
+                                    </div>
+                                </li>
+                            ))}
                     </ul>
 
                     <p className="title">TAGS</p>
+
                     <div className="tags-wrapper">
-                        {loading && <p style={{ fontSize: '12px', color: '#666' }}>Loading tags...</p>}
-                        {error && <p style={{ fontSize: '12px', color: '#ef4444' }}>Failed to load tags</p>}
-                        {!loading && !error && (
-                            <TagList tags={tags} onUpdateTag={handleUpdateTag} onDeleteTag={handleDeleteTag} />
+                        {loading && (
+                            <p style={{
+                                fontSize: '12px',
+                                color: '#666'
+                            }}>
+                                Loading tags...
+                            </p>
                         )}
-                        <AddTag onAddTag={handleAddTag} existingTags={tags} />
+
+                        {error && (
+                            <p style={{
+                                fontSize: '12px',
+                                color: '#ef4444'
+                            }}>
+                                Failed to load tags
+                            </p>
+                        )}
+
+                        {!loading && !error && (
+                            <TagList
+                                tags={tags}
+                                onUpdateTag={handleUpdateTag}
+                                onDeleteTag={handleDeleteTag}
+                            />
+                        )}
+
+                        <AddTag
+                            onAddTag={handleAddTag}
+                            existingTags={tags}
+                        />
                     </div>
                 </div>
 
                 <div className="bottom">
                     <ul>
-                        <li onClick={() => { handleLogOut(); closeSidebar(); }}>
-                            <LogoutIcon className='icon' />
+                        <li
+                            onClick={() => {
+                                handleLogOut();
+                                closeSidebar();
+                            }}
+                        >
+                            <LogoutIcon className="icon" />
                             <span>Sign out</span>
                         </li>
                     </ul>

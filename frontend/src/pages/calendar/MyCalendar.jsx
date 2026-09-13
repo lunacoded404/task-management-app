@@ -75,12 +75,7 @@ const MyCalendar = ({
     } = useCalendar();
 
     return (
-        <div
-            className="calendar"
-            style={{
-                padding: '20px',
-            }}
-        >
+        <div className="calendar">
             <Sidebar
                 tags={tags}
                 onAddTag={onAddTag}
@@ -111,7 +106,6 @@ const MyCalendar = ({
                     onSelectEvent={handleSelectEvent}
                     eventPropGetter={eventStyleGetter}
                     components={{ event: CalendarEvent }}
-                    style={{ height: 600 }}
                     views={[
                         'month',
                         'week',
@@ -123,6 +117,7 @@ const MyCalendar = ({
                     onNavigate={setDate}
                     date={date}
                 />
+                
             </div>
 
             {showAddModal && (

@@ -40,6 +40,8 @@ if not firebase_admin._apps:
             )
         )
 
+        ROOT_DIR = os.path.dirname(BASE_DIR)
+
         firebase_service_account = os.path.join(
             BASE_DIR,
             "firebase-service-account.json"

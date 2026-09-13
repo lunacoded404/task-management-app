@@ -27,8 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
-
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
 # Application definition
 
@@ -92,17 +91,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=(
+#             f"postgresql://"
+#             f"{os.getenv('DB_USER')}:"
+#             f"{os.getenv('DB_PASSWORD')}@"
+#             f"{os.getenv('DB_HOST')}:"
+#             f"{os.getenv('DB_PORT')}/"
+#             f"{os.getenv('DB_NAME')}"
+#         ),
+#         conn_max_age=600,
+#     )
+# }
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=(
-            f"postgresql://"
-            f"{os.getenv('DB_USER')}:"
-            f"{os.getenv('DB_PASSWORD')}@"
-            f"{os.getenv('DB_HOST')}:"
-            f"{os.getenv('DB_PORT')}/"
-            f"{os.getenv('DB_NAME')}"
-        ),
+        default=os.getenv("DATABASE_URL"),
         conn_max_age=600,
+        conn_health_checks=True,
     )
 }
 
@@ -167,6 +174,7 @@ CORS_ALLOWED_ORIGINS = [
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
+    ".onrender.com",
 ]
 
 if os.getenv("RENDER_EXTERNAL_HOSTNAME"):

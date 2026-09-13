@@ -154,6 +154,7 @@
 }
 
 @media (max-width: 600px) {
+
     .mobile-menu-toggle {
         display: flex;
         align-items: center;
@@ -162,11 +163,13 @@
         top: 12px;
         left: 0;
         z-index: 1002;
+        width: 40px;
+        height: 40px;
         background: #ffffff;
         border: 1px solid #d4d4d8;
         border-left: none;
         border-radius: 0 8px 8px 0;
-        padding: 6px 8px 6px 4px;
+        padding: 0;
         cursor: pointer;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
 
@@ -175,6 +178,8 @@
             color: #333;
         }
     }
+
+
 
     .sidebar-overlay {
         display: block;
@@ -185,10 +190,11 @@
         backdrop-filter: blur(2px);
     }
 
+
     .sidebar {
         position: fixed;
         top: 0;
-        left: -280px; 
+        left: -280px;
         width: 280px;
         height: 100vh;
         z-index: 1001;
@@ -197,33 +203,78 @@
         overflow-y: auto;
 
         &.open {
-            left: 0; 
+            left: 0;
         }
 
         .top {
+            height: 50px;
+            padding: 10px;
+
             .menu {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 5px;
+
+                .menu-title {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #444;
+                }
+
                 .mobile-close-btn {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    width: 34px;
+                    height: 34px;
+                    background: transparent;
+                    border: none;
+                    border-radius: 6px;
+                    padding: 0;
+                    cursor: pointer;
+                    color: #555;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.08);
+                    }
+
+                    svg {
+                        font-size: 22px;
+                    }
                 }
             }
         }
     }
 
-    .home, .calendar, .day, .category-page, .sticky {
+    .home,
+    .calendar,
+    .day,
+    .category-page,
+    .sticky {
         flex-direction: column !important;
         height: auto !important;
         overflow: visible !important;
 
-        .homeContainer, .mycalendar, .dayContainer, .categoryContainer, .stickyContainer {
+        .homeContainer,
+        .mycalendar,
+        .dayContainer,
+        .categoryContainer,
+        .stickyContainer {
             width: 100% !important;
             flex: unset !important;
+
             padding-left: 12px !important;
             padding-right: 12px !important;
-            padding-top: 55px !important; 
+            padding-top: 55px !important;
+
             height: auto !important;
             overflow: visible !important;
+
             box-sizing: border-box !important;
         }
     }

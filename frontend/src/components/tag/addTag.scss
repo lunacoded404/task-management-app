@@ -1,10 +1,7 @@
-// addTag.scss
-
 .add-tag-component {
   margin-top: 12px; 
   width: 100%;
 
-  // Nút kích hoạt mở form (+ New Tag)
   .add-tag-trigger {
     display: inline-flex;
     align-items: center;
@@ -26,7 +23,6 @@
     }
   }
 
-  // Khung form khi mở rộng (isExpanded = true)
   .add-tag-form {
     display: flex;
     flex-direction: column;
@@ -86,7 +82,6 @@
       }
     }
 
-    // Bảng màu chấm tròn
     .color-row {
       display: flex;
       align-items: center;
@@ -105,7 +100,6 @@
           transform: scale(1.2);
         }
 
-        // Trạng thái màu đang được chọn
         &.selected {
           border-color: #ffffff;
           box-shadow: 0 0 0 1.5px #1e293b;

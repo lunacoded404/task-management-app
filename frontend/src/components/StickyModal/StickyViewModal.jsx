@@ -41,7 +41,6 @@ const StickyViewModal = ({
                 }}
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Header */}
                 <div className="stickyViewModal-header">
                     <h2 className="stickyViewModal-title">
                         {note.title}
@@ -58,7 +57,6 @@ const StickyViewModal = ({
                     </button>
                 </div>
 
-                {/* Content */}
                 <div className="stickyViewModal-body">
                     <div
                         className="stickyViewModal-content"

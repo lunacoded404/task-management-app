@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../api/categories";
 
-
 const PRESET_BG_COLORS = [
     { hex: "#12544F" },
     { hex: "#FFCB56" },

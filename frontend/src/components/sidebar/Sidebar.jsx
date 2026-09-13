@@ -62,7 +62,6 @@ const Sidebar = () => {
 
     return (
         <>
-            {/* Menu button - chỉ xuất hiện khi Sidebar đóng */}
             {!isOpen && (
                 <button
                     className="mobile-menu-toggle"
@@ -86,7 +85,6 @@ const Sidebar = () => {
                     <div className="menu">
                         <span className="menu-title">Menu</span>
 
-                        {/* Close button - chỉ xuất hiện khi Sidebar mở */}
                         <button
                             className="mobile-close-btn"
                             onClick={closeSidebar}

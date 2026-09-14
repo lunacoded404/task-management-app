@@ -28,6 +28,7 @@ const Welcome = () => {
                             color: "#007bff",
                             cursor: "pointer",
                             textDecoration: "none",
+                            marginLeft: "5px",
                      }}>
                         <Link to="/login" style={{ textDecoration: "none" }}>Login</Link>
                     </span>

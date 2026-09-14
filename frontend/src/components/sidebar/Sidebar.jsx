@@ -181,41 +181,42 @@ const Sidebar = () => {
                                 </li>
                             ))}
                     </ul>
+                    <ul>
+                        <p className="title">TAGS</p>
 
-                    <p className="title">TAGS</p>
+                        <div className="tags-wrapper">
+                            {loading && (
+                                <p style={{
+                                    fontSize: '12px',
+                                    color: '#666'
+                                }}>
+                                    Loading tags...
+                                </p>
+                            )}
 
-                    <div className="tags-wrapper">
-                        {loading && (
-                            <p style={{
-                                fontSize: '12px',
-                                color: '#666'
-                            }}>
-                                Loading tags...
-                            </p>
-                        )}
+                            {error && (
+                                <p style={{
+                                    fontSize: '12px',
+                                    color: '#ef4444'
+                                }}>
+                                    Failed to load tags
+                                </p>
+                            )}
 
-                        {error && (
-                            <p style={{
-                                fontSize: '12px',
-                                color: '#ef4444'
-                            }}>
-                                Failed to load tags
-                            </p>
-                        )}
+                            {!loading && !error && (
+                                <TagList
+                                    tags={tags}
+                                    onUpdateTag={handleUpdateTag}
+                                    onDeleteTag={handleDeleteTag}
+                                />
+                            )}
 
-                        {!loading && !error && (
-                            <TagList
-                                tags={tags}
-                                onUpdateTag={handleUpdateTag}
-                                onDeleteTag={handleDeleteTag}
+                            <AddTag
+                                onAddTag={handleAddTag}
+                                existingTags={tags}
                             />
-                        )}
-
-                        <AddTag
-                            onAddTag={handleAddTag}
-                            existingTags={tags}
-                        />
-                    </div>
+                        </div>
+                    </ul>
                 </div>
 
                 <div className="bottom">
